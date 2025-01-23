@@ -8,7 +8,7 @@ from appium import webdriver
 appium_options = AppiumOptions()
 appium_options.load_capabilities({
      "platformName": "Android",
-     "appium:deviceName": "emulator-5556",
+     "appium:deviceName": "Redmi A2",
      "appium:app": "C:\\Users\\Admin\\Downloads\\application-959e753a-becd-4bc8-a76a-84a587dec56a.apk",
 })
 
@@ -35,11 +35,7 @@ driver.find_element('xpath','(//android.widget.EditText[@resource-id="text-input
 driver.implicitly_wait(5)
 driver.find_element('xpath','//android.widget.Button[@content-desc="लॉग इन करें"]').click()
 driver.implicitly_wait(20)
-#Navigate to Batch Requests Screen
-driver.find_element('xpath','//android.widget.Button[@content-desc="अनुरोध"]').click()
-driver.implicitly_wait(20)
-driver.find_element('xpath','	//android.widget.TextView[@text="बैच आईडी : Apptestbatch"]').click()
-driver.find_element('xpath',' //android.widget.TextView[@resource-id="button-text" and @text="स्वीकार करें"]').click()
+
 #Navigate to Upcoming Batch Screen
 driver.find_element('xpath','//android.view.View[@content-desc="बैचेस"]').click()
 driver.implicitly_wait(10)
@@ -51,11 +47,20 @@ driver.implicitly_wait(10)
 
 driver.find_element('xpath','//android.widget.TextView[@text="बैच आईडी[0]"]').click()
 
+#Navigate to Ongoing Batch Screen
+driver.find_element('xpath','//android.widget.TextView[@text="चल रहा है"]').click()
+driver.implicitly_wait(10)
+
+driver.find_element('xpath','//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup').click()
+driver.implicitly_wait(10)
+driver.find_element('xpath','//android.widget.TextView[@text="बैच आईडी : Apptestbatch"]').click()
+driver.find_element('xpath','//android.widget.TextView[@text="बैच लंबित"]').click()
+
 #Clock in
 driver.find_element('xpath','//android.widget.TextView[@resource-id="button-text"]')
 driver.implicitly_wait(40)
-
 driver.find_element('xpath','//android.widget.TextView[@resource-id="button-text"]').click()
+
 
 
 

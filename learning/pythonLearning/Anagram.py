@@ -9,3 +9,13 @@ else:
     else:
         print("numbers are not anagram")
 
+
+str1 = input("enter sentencs")
+str2 = input("enter str2")
+if len(str1) != len(str2)
+    print("not anagram")
+else:
+    if sorted(str1)==sorted(str2)
+        print("numbers are anagram")
+    else:
+        print("numbers are anagram")

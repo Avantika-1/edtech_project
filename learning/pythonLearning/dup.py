@@ -10,3 +10,17 @@ for i in list:
 print(list)
 print(newset)
 print(duplicates)
+
+
+
+list1 = [18,12,12,1,10,8,0]
+a = set()
+duplicates1 = []
+for i in list1:
+    if i in a:
+         duplicates1.append(i)
+    else:
+        a.add(i)
+
+print(duplicates1)
+
